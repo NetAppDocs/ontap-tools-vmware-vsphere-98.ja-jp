@@ -1,0 +1,44 @@
+---
+permalink: manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html 
+sidebar: sidebar 
+keywords:  
+summary: diag ユーザの SSH アクセスを有効にするように ONTAP ツールを設定することができます。 
+---
+= リモート診断アクセスを設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+diag ユーザの SSH アクセスを有効にするように ONTAP ツールを設定することができます。
+
+* 必要なもの *
+
+vCenter Server インスタンスの VASA Provider 拡張機能を有効にする必要があります。
+
+* このタスクについて *
+
+SSH を使用して diag ユーザアカウントにアクセスする際は次の制限があります。
+
+* SSH をアクティブ化した場合、使用できるログインアカウントは 1 つだけです。
+* diag ユーザアカウントへの SSH アクセスは、次のいずれかの状況になると無効になります。
++
+** タイムアウトした場合。
++
+ログインセッションの有効期限は翌日の午前 0 時までです。
+
+** SSH を使用して diag ユーザとして再度ログインした場合。
+
+
+
+
+* 手順 *
+
+. vCenter Server で、 VASA Provider へのコンソールを開きます。
+. maintenance ユーザとしてログインします。
+. 入力するコマンド `4` [Support and Diagnostics]を選択します。
+. 入力するコマンド `3` [Enable remote diagnostics access]を選択します。
+. 入力するコマンド `y` [確認]ダイアログボックスで、リモート診断アクセスを有効にします。
+. リモート診断アクセス用のパスワードを入力します。
+

@@ -1,0 +1,47 @@
+---
+permalink: deploy/task_install_the_nfs_vaai_plug_in.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere 用の ONTAP ツールの GUI を使用して、ネットアップ NFS Plug-in for VMware vStorage APIs for Array Integration （ VAAI ）をインストールできます。 
+---
+= NFS VAAI プラグインをインストールします
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere 用 ONTAP ツールの GUI を使用して、ネットアップ NFS Plug-in for VMware vStorage APIs for Array Integration （ VAAI ）をインストールできます。
+
+* 必要なもの *
+
+* NFS Plug-in for VAAIのインストールパッケージをダウンロードしておく必要があります (``.vib`）をNetApp Support Site から取得します。
++
+https://mysupport.netapp.com/site/global/dashboard["ネットアップサポート"]
+
+* ESXi ホスト 6.5 以降と ONTAP 9.1 以降をインストールしておく必要があります。
+* ESXi ホストの電源をオンにし、 NFS データストアをマウントしておく必要があります。
+* の値を設定しておく必要があります `DataMover.HardwareAcceleratedMove`、 `DataMover.HardwareAcceleratedInit`および `VMFS3.HardwareAcceleratedLocking` ホスト設定を「1」に変更します。
++
+これらの値は、推奨設定ダイアログボックスが更新されると、 ESXi ホストで自動的に設定されます。
+
+* を使用して、Storage Virtual Machine（SVM）でvstorageオプションを有効にしておく必要があります `vserver nfs modify -vserver vserver_name -vstorage enabled` コマンドを実行します
+* NetApp NFS VAAI Plug-in 2.0 を使用している場合は、 ESXi 7.0 update1 以降が必要です。
+
+
+* 手順 *
+
+. の名前を変更します `.vib` NetApp Support Site からNetAppNasPlugin.vibにダウンロードしたファイル（VSCで使用される事前定義の名前に一致）。
+. ONTAP ツールのホームページで「 * 設定」をクリックします。
+. NFS VAAI ツール * タブをクリックします。
+. [ 既存のバージョン * （ Existing version * ） ] セクションで [ * 変更 * （ Change * ） ] をクリックする
+. 名前を変更したを参照して選択します `.vib` [File]をクリックし、*[Upload]*をクリックしてファイルをONTAP toolsにアップロードします。
+. ESXi ホストにインストールセクションで、 NFS VAAI プラグインをインストールする ESXi ホストを選択し、 * インストール * をクリックします。
++
+画面に表示される手順に従ってインストールを完了する必要があります。インストールの進行状況は、 vSphere Web Client のタスクセクションで監視できます。
+
+. インストールが終了したら、 ESXi ホストをリブートします。
++
+ESXi ホストをリブートすると、 NFS VAAI プラグインが VSC で自動的に検出されます。プラグインを有効にするための追加の手順は必要ありません。
+
+

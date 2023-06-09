@@ -1,0 +1,63 @@
+---
+permalink: configure/task_enable_datastore_mounting_across_different_subnets.html 
+sidebar: sidebar 
+keywords:  
+summary: NFS または iSCSI を使用していて、 ESXi ホストとストレージシステムとでサブネットが異なる場合は、 VMware vSphere のプリファレンスファイル用の ONTAP ® ツールを変更する必要があります。プリファレンスファイルを変更しないと、 Virtual Storage Console （ VSC ）でデータストアをマウントできないためにデータストアのプロビジョニングが失敗します。 
+---
+= 異なるサブネット間でのデータストアのマウントを有効にする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NFS または iSCSI を使用していて、 ESXi ホストとストレージシステムとでサブネットが異なる場合は、 VMware vSphere のプリファレンスファイル用の ONTAP ® ツールを変更する必要があります。プリファレンスファイルを変更しないと、 Virtual Storage Console （ VSC ）でデータストアをマウントできないためにデータストアのプロビジョニングが失敗します。
+
+* このタスクについて *
+
+データストアのプロビジョニングに失敗した場合、以下のエラーメッセージが記録されます。
+
+' 続行できません。コントローラ上のカーネル IP アドレスとアドレスの相互参照時に IP アドレスが見つかりませんでした。
+
+NFS マウント・ボリュームと一致するネットワークが ' これらのホストに見つかりません
+
+* 手順 *
+
+. vCenter Server インスタンスにログインします。
+. 統合アプライアンス仮想マシンを使用してメンテナンスコンソールを起動します。
++
+link:reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html["VMware vSphere 用 ONTAP ツールのメンテナンスコンソール"]
+
+. 入力するコマンド `4` をクリックして、[Support and Diagnostics]オプションにアクセスします。
+. 入力するコマンド `2` [Access Diagnostic Shell]オプションにアクセスします。
+. 入力するコマンド `vi /opt/netapp/vscserver/etc/kamino/kaminoprefs.xml` を更新します `kaminoprefs.xml` ファイル。
+. を更新します `kaminoprefs.xml` ファイル。
++
+|===
+
+
+| * を使用する場合 * | * これをしなさい ...* 
+
+
+ a| 
+iSCSI
+ a| 
+エントリキーの値を変更します `default.allow.iscsi.mount.networks` データをESXiホストのネットワークの価値にまで拡張できます。
+
+
+
+ a| 
+NFS
+ a| 
+エントリキーの値を変更します `default.allow.nfs.mount.networks` データをESXiホストのネットワークの価値にまで拡張できます。
+
+|===
++
+プリファレンスファイルには、これらのエントリキーのサンプル値が含まれています。
+
++
+
+NOTE: 値「 all 」はすべてのネットワークを意味するわけではありません。「 all 」の値を指定すると、ホストとストレージシステムの間にある一致するすべてのネットワークが、データストアのマウントに使用されます。ホストネットワークを指定すると、指定したサブネット間でのみマウントを有効にできます。
+
+. を保存して閉じます `kaminoprefs.xml` ファイル。
+

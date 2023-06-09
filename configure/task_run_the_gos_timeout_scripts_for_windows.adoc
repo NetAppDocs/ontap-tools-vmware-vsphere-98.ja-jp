@@ -1,0 +1,36 @@
+---
+permalink: configure/task_run_the_gos_timeout_scripts_for_windows.html 
+sidebar: sidebar 
+keywords:  
+summary: Windows ゲストオペレーティングシステムの SCSI I/O タイムアウト設定は、ゲストオペレーティングシステム（ OS ）のタイムアウトスクリプトで設定されます。タイムアウトは 60 秒または 190 秒のどちらかを指定できます。設定を有効にするには、 Windows ゲスト OS をリブートする必要があります。 
+---
+= Windows ゲストオペレーティングシステムのタイムアウト値を設定します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows ゲストオペレーティングシステムの SCSI I/O タイムアウト設定は、ゲストオペレーティングシステム（ OS ）のタイムアウトスクリプトで設定されます。タイムアウトは 60 秒または 190 秒のどちらかを指定できます。設定を有効にするには、 Windows ゲスト OS をリブートする必要があります。
+
+* 必要なもの *
+
+Windows スクリプトを含む ISO イメージをマウントしておく必要があります。
+
+* 手順 *
+
+. Windows 仮想マシンのコンソールにアクセスし、管理者権限を持つアカウントでログインします。
+. スクリプトが自動的に起動しない場合は、CDドライブを開き、を実行します `windows_gos_timeout.reg` スクリプト：
++
+レジストリエディタダイアログが表示されます。
+
+. 続行するには、 [ はい ] をクリックします。
++
+次のメッセージが表示されます。
+
++
+`The keys and values contained in 'D:\windows_gos_timeout.reg' have been successfully added to the registry.``
+
+. Windows ゲスト OS をリブートします。
+. ISO イメージをアンマウントします。
+

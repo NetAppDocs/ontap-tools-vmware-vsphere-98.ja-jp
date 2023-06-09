@@ -1,0 +1,12 @@
+---
+permalink: deploy/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= 導入およびセットアップガイド
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

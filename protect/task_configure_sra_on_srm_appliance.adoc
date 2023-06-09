@@ -1,0 +1,34 @@
+---
+permalink: protect/task_configure_sra_on_srm_appliance.html 
+sidebar: sidebar 
+keywords:  
+summary: SRM アプライアンスを導入したら、 SRM アプライアンスに SRA を設定する必要があります。SRA を正しく設定すると、ディザスタリカバリ管理のために SRM アプライアンスが SRA と通信できるようになります。SRM アプライアンスと SRA の間の通信を有効にするためには、 ONTAP ツールのクレデンシャル（ IP アドレスと管理者パスワード）を SRM アプライアンスに保存する必要があります。 
+---
+= SRM アプライアンスで SRA を設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SRM アプライアンスを導入したら、 SRM アプライアンスに SRA を設定する必要があります。SRA を正しく設定すると、ディザスタリカバリ管理のために SRM アプライアンスが SRA と通信できるようになります。SRM アプライアンスと SRA の間の通信を有効にするためには、 ONTAP ツールのクレデンシャル（ IP アドレスと管理者パスワード）を SRM アプライアンスに保存する必要があります。
+
+* 必要なもの *
+
+SRM アプライアンスに .tar.gz ファイルをアップロードしておく必要があります。
+
+* このタスクについて *
+
+SRM アプライアンスで SRA を設定すると、 SRA クレデンシャルが SRM アプライアンスに保存されます。
+
+* 手順 *
+
+. putty を使用して、管理者アカウントで SRM アプライアンスにログインします。
+. 次のコマンドを使用してrootユーザに切り替えます。 `su root`
+. ログの場所でコマンドを入力して、SRA Dockerで使用されるDocker IDを取得します `ps -l`
+. コンテナIDにログインするには、コマンドdockerを入力します `exec -it -u srm <container id> sh`
+. 次のコマンドを使用して、SRMにONTAP toolsのIPアドレスとパスワードを設定します。 `perl command.pl -I <va-IP> administrator <va-password>``
++
+ストレージクレデンシャルが保存されたことを示す成功メッセージが表示されます。SRA は、指定された IP アドレス、ポート、およびクレデンシャルを使用して SRA サーバと通信できます。
+
+
