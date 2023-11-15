@@ -578,7 +578,6 @@ rm -rf com.netapp.vsch5-x.x.x.xxxxを参照してください
   <block id="3d7de81ead511dc0d2bd3eeb864ff231" category="paragraph">VMFS データストアのサイズ変更時に包含ボリュームのサイズを変更するようにするには、 VMFS データストアの初期プロビジョニング時にストレージ属性セクションの既存のボリュームの使用 * オプションを使用せずに、各データストア用に新しいボリュームを自動的に作成するようにします。</block>
   <block id="b6b2c55f92e8e04471c740483e69a795" category="paragraph">NFS データストアのサイズは拡張または縮小できますが、 VMFS データストアの場合はサイズを拡張することしかできません。データストアのサイズ変更は、自動拡張および縮小オプションが設定された FlexGroup データストアでもサポートされます。VVOL データストアに含まれる従来のデータストアおよび FlexVol ボリュームの一部である FlexGroup は、既存のサイズよりも縮小することはできませんが、最大 120% まで拡張できます。これらの FlexGroup ボリュームと FlexVol ボリュームでは、デフォルトの Snapshot が有効になっています。</block>
   <block id="0e6fc56cbe91d72cb03e33a904ae9ab3" category="list-text">ナビゲーションペインで、データストアが含まれているデータセンターを選択します。</block>
-  <block id="a15d1bf5dee929fddbf2e03ae0f830e9" category="list-text">データストアを右クリックし、 * NetApp ONTAP tools * &gt; * assign QoS * を選択します。</block>
   <block id="425e99780c82b74f333dd7da3068f492" category="list-text">サイズ変更ダイアログボックスで、データストアの新しいサイズを指定し、 * OK * をクリックします。</block>
   <block id="29b33d6a4971ded7e90ffb22fa8e685d" category="paragraph">Storage Systems （ストレージシステム）メニューの * rediscover all * オプションを実行して、 Storage Systems and dashboard （ストレージシステムおよびダッシュボード）のストレージ・リストを手動で更新したり、次のスケジュールされた更新を待機したりできます。</block>
   <block id="96175e97c8c13423e6a60249fa770130" category="summary">従来のデータストアと仮想マシンは、 ONTAP ツールの従来のダッシュボードを使用して監視できます。ダッシュボードのデータを使用して、データストアの使用状況を分析し、仮想マシンでスペースに関する制約が発生しないように対処できます。</block>
@@ -1892,7 +1891,6 @@ ONTAP 9.7 以降を使用している場合は、 OnCommand API サービスを 
   <block id="4c3c39a603eb21106d2df2836d4b456c" category="sidebar">ネットアップのナレッジベース - ONTAP ツール</block>
   <block id="bbf1057ad175e1e1664e224351019ac9" category="sidebar">NetApp Import Utility - ビデオ</block>
   <block id="72393f9ef0b6b69526a30ac7ce5276bc" category="sidebar">ネットアップコミュニティ - ONTAP ツール</block>
-  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere 用の ONTAP ツール</block>
   <block id="4226794a7bb33ab0a2309e30c07c9031" category="sidebar">ONTAP ツールを管理します</block>
   <block id="1b8a04f09ff55290753a17988fd53c2a" category="sidebar">データストアを管理します</block>
   <block id="427d9ce60f4b39aa82a25138b4aa489f" category="sidebar">仮想マシンを管理</block>
@@ -1931,4 +1929,5 @@ ONTAP 9.7 以降を使用している場合は、 OnCommand API サービスを 
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">データストアを右クリックし、* NetApp ONTAP [vVolツール]*&gt;*[vVol以外のデータストアのサイズ変更]*を選択します。</block>
 </blocks>
