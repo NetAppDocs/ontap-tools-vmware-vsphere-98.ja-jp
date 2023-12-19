@@ -107,34 +107,9 @@
   <block id="629c3602e821ea228948769460d948fb" category="doc">vSphere にキャッシュされているダウンロード済みプラグインパッケージをクリアします</block>
   <block id="2486f16fb02b577c6c3375ba9a93762d" category="paragraph">ONTAP ツールの導入またはアップグレード後にプラグインが自動的に更新されない場合は、ブラウザおよび vCenter Server にキャッシュされているダウンロード済みプラグインパッケージをクリーンアップして、 vCenter Server プラグインの問題を解決する必要があります。</block>
   <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">* 手順 *</block>
-  <block id="928a0fc17a8823d170fddc579679a74b" category="list-text">既存の vSphere Web Client または vSphere Client からログアウトします。</block>
   <block id="a0616a23fd099dfad3eb5032733a31a3" category="list-text">ブラウザキャッシュを削除します。</block>
-  <block id="a81218cfa1b12253d3738424f7fe41f1" category="list-text">vSphere Client にキャッシュされたプラグインパッケージを削除します。</block>
-  <block id="d3f8fbc38c70102f80ae8f7fad51a2ba" category="cell">* を使用している場合 *</block>
   <block id="a8ec31e018bc514e0369f015f6ef9156" category="cell">* 次の手順を実行します。 *</block>
-  <block id="6022f5a040dd9eabb5e196140c0a3837" category="paragraph">Windows vCenter Server の場合</block>
-  <block id="08ade16156fae5f96326f33fb911645a" category="paragraph">次のフォルダを削除します<block ref="86cd6cbd9d0d47d7701fb50d3f70f725" prefix=" " category="inline-code"></block>、<block ref="1581668028da892face35824bf9266d3" prefix=" " category="inline-code"></block>および<block ref="35fc60e3d9ae3cc80b3a81a17eaab868" prefix=" " category="inline-code"></block> 場所：</block>
-  <block id="c50bfe91c2a67370ca4e01f0fbcaa60b" category="list-text">vSphere Web Clientのパス：<block ref="c0fbb42d44e85481a39b542554c38c99" prefix=" " category="inline-code"></block></block>
-  <block id="dd286c989dcb346e3dcbcdcffb367513" category="list-text">vSphere Client（HTML5）のパス：<block ref="4cf617a45d429a3b37bec630c8f82740" prefix=" " category="inline-code"></block></block>
-  <block id="32b6ae27b932f6df4adc3773921186b2" category="paragraph">vCSA</block>
   <block id="7828ebc558b735f6dff95945a2060819" category="list-text">SSH で VCSA アプライアンスに接続します。</block>
-  <block id="c2893b865600d46b6cf4853c3e95aaef" category="list-text">を使用して、vCenter Web Client UI拡張機能のディレクトリに移動します<block ref="75825b06e1ee39dd4ad04d42ac5347a5" prefix=" " category="inline-code"></block></block>
-  <block id="c967b27fa47f0711ff8f4f94f6001d1c" category="list-text">を使用して、ネットアップ固有のキャッシュ済みプラグインパッケージを削除します<block ref="373d5cc730dd449760c437daf3d5a6d5" prefix=" " category="inline-code"></block> コマンド：
-例: x.x.x.x.xxxxはプラグインのバージョンです。
------
- rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxxを参照してください
- rm -rf com.netapp.nvpf.webclient-x.x.x.xxxxを参照してください
- rm -rf com.netapp.vsch5-x.x.x.xxxxを参照してください
------</block>
-  <block id="58068878d43aa1275186e320e39c8f61" category="list-text">を使用して、vCenter Client（HTML5）UI拡張機能のディレクトリに移動します<block ref="75825b06e1ee39dd4ad04d42ac5347a5" prefix=" " category="inline-code"></block></block>
-  <block id="e8472057a9b51ca61b841e7cba26f994" category="list-text">を使用して、ネットアッププラグイン固有のキャッシュ済みプラグインパッケージを削除します<block ref="373d5cc730dd449760c437daf3d5a6d5" prefix=" " category="inline-code"></block> コマンド：
-例: x.x.x.x.xxxxはプラグインのバージョンです
- -----
-rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxxを参照してください
-rm -rf com.netapp.nvpf.webclient-x.x.x.xxxxを参照してください
-rm -rf com.netapp.vsch5-x.x.x.xxxxを参照してください
- -----</block>
-  <block id="04817d905fd962e9edfde7e6036e0241" category="list-text">vSphere にログインし、次のコマンドを使用して vSphere Web Client サービスと vSphere Client サービスを再起動します。</block>
   <block id="6f09e89fc23fe62b14a19eb0d48c896b" category="summary">VMware vSphere 用の ONTAP ツール 9.x リリースでは、最新バージョンへのインプレースアップグレードがサポートされています。</block>
   <block id="bdb4f545119e3b74433b33e690e61b23" category="paragraph">ONTAP ツールなどの個々のアプリケーションの以前のリリースでは、異なるアップグレードプロセスが使用されます。VSC 、 VASA Provider 、または SRA がインストールされている環境では、次の処理を実行する必要があります。</block>
   <block id="0aed96d12200abba996f178b4112706d" category="list-text">最新リリースの ONTAP ツールを導入します。</block>
@@ -1930,4 +1905,13 @@ ONTAP 9.7 以降を使用している場合は、 OnCommand API サービスを 
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">データストアを右クリックし、* NetApp ONTAP [vVolツール]*&gt;*[vVol以外のデータストアのサイズ変更]*を選択します。</block>
+  <block id="bec4fe8b0a1c02393fd0700875750a56" category="list-text">既存のvSphere Web ClientまたはvSphere UIからログアウトします。</block>
+  <block id="fae0172133f0506cbb207e15e1eb4aef" category="list-text">vSphere Client にキャッシュされたプラグインパッケージを削除します。vCSAの場合は、次の手順を実行します。</block>
+  <block id="a8f3b27f04ef4962a5caf70a06ae28fb" category="list-text">VMware vSphere Clientサービスを停止します。<block ref="4ad331c0aae87e53252a4e9c0fb7b3fe" prefix=" " category="inline-code"></block></block>
+  <block id="2096eb0aa64e2928992af27ac4402e59" category="list-text">ディレクトリをvCenter Client UI extensionsディレクトリに変更します。<block ref="877ddb80b516a509c7c154978a1ff7ee" prefix=" " category="inline-code"></block></block>
+  <block id="dc37c1c22c04fc5e7386e3092519eac8" category="list-text">を使用して、ネットアップ固有のキャッシュ済みプラグインパッケージを削除します<block ref="373d5cc730dd449760c437daf3d5a6d5" prefix=" " category="inline-code"></block> コマンド：</block>
+  <block id="ea51a159279a27e3f4ac4547881ff688" category="paragraph"><block ref="91fa5c8593259f0cb6f0845470d72256" prefix="" category="inline-code"></block></block>
+  <block id="5e9e6efcbe65718c4f8940b263317a69" category="paragraph"><block ref="7f4891afcb11aecd70e2cfd4c1573829" prefix="" category="inline-code"></block></block>
+  <block id="5547d8d27b62c49e4555e1f79122a342" category="paragraph"><block ref="9e427bf42ac054021120757914ef1809" prefix="" category="inline-code"></block></block>
+  <block id="b8ace162f3094fd5ac1138ced112d7a7" category="list-text">VMware vSphere Clientサービスを開始します。<block ref="bfbe7f4b006f6fcfc7bb66e075309067" prefix=" " category="inline-code"></block></block>
 </blocks>
